@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+
+ :root {
+  /* Hex que ya tienes */
+  --primary-an:   #143364;
+  --primary:      #0a1832;
+  --secondary:    #b3cfe5;
+  --tertiary:     #4a7fa7;
+  --quaternary:   #1a3d63;
+  --quinary:      #f6fafd;
+  --background:   #1a3d63;
+  --background-an:#afafaf;
+
+  /* HSL equivalentes (usa estos para opacidades con slash) */
+  --primary-an-hsl:    216.8 66.7% 23.5%;
+  --primary-hsl:       219.0 66.7% 11.8%;
+  --secondary-hsl:     206.4 49.0% 80.0%;
+  --tertiary-hsl:      205.8 38.6% 47.3%;
+  --quaternary-hsl:    211.2 58.4% 24.5%;
+  --quinary-hsl:       205.7 63.6% 97.8%;
+  --background-hsl:    211.2 58.4% 24.5%;
+  --background-an-hsl:   0.0 0.0% 68.6%;
+
+  --font-sans: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Merriweather', serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+
+/* Estilos tipográficos globales */
+h1, h2, h3, h4, h5, h6, p, small {
+  color: hsl(var(--quinary-hsl) / 0.95); /* texto principal claro */
+  margin: 0 0 0.75em 0;
+  line-height: 1.2;
+  font-family: var(--font-mono);
+}
+
+h1 { font-size: 3rem;   font-weight: 700; color: hsl(var(--secondary-hsl)); }
+h2 { font-size: 2.25rem; font-weight: 600; color: hsl(var(--tertiary-hsl)); }
+h3 { font-size: 1.875rem; font-weight: 600; }
+h4 { font-size: 1.5rem;  font-weight: 500; }
+h5 { font-size: 1.25rem; font-weight: 500; }
+h6 { font-size: 1.125rem; font-weight: 500; }
+
+p  { font-size: 1rem;    font-weight: 400; line-height: 1.6; }
+small { font-size: 0.875rem; opacity: 0.8; }
+
+body {
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+@layer utilities {
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .35; }
+  }
+  @keyframes blink-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .6; }
+  }
+  .animate-blink { animation: blink 1s ease-in-out infinite; }
+  .animate-blink-slow { animation: blink-slow 2s ease-in-out infinite; }
+}
+
